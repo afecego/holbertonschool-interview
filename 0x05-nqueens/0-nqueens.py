@@ -5,6 +5,7 @@ import sys
 
 
 def nonAttack(sol, ln, i):
+    """"""
     for j in range(ln):
         if(sol[j] == i or sol[j] + ln - j == i or sol[j] + j - ln == i):
             return False
@@ -12,13 +13,19 @@ def nonAttack(sol, ln, i):
 
 
 def nextSafe(sol, ln):
+    """"""
     for i in range(len(sol)):
         if nonAttack(sol, ln, i):
             sol[ln] = i
             if ln < len(sol) - 1:
                 nextSafe(sol, ln + 1)
             else:
-                print([[i, sol[i]] for i in range(len(sol))])
+                result = []
+                for i in range(len(sol)):
+                    a = [i, sol[i]]
+                    result.append(a)
+                print (result)
+
 
 if len(sys.argv) != 2:
     print ('Usage: nqueens N\n')
