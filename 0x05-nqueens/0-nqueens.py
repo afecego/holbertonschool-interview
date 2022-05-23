@@ -33,7 +33,7 @@ if len(sys.argv) != 2:
 else:
     try:
         n = int(sys.argv[1])
-    except ValueError:
+    except Exception:
         print('N must be a number\n')
         sys.exit(1)
     if type(n) is not int:
