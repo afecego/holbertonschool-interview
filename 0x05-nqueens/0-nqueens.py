@@ -5,7 +5,7 @@ import sys
 
 
 def nonAttack(sol, ln, i):
-    """"""
+    """verificartion of a place non-attacking queen"""
     for j in range(ln):
         if(sol[j] == i or sol[j] + ln - j == i or sol[j] + j - ln == i):
             return False
@@ -13,7 +13,7 @@ def nonAttack(sol, ln, i):
 
 
 def nextSafe(sol, ln):
-    """"""
+    """verification of the next safe position"""
     for i in range(len(sol)):
         if nonAttack(sol, ln, i):
             sol[ln] = i
@@ -24,11 +24,11 @@ def nextSafe(sol, ln):
                 for i in range(len(sol)):
                     a = [i, sol[i]]
                     result.append(a)
-                print (result)
+                print(result)
 
 
 if len(sys.argv) != 2:
-    print ('Usage: nqueens N\n')
+    print('Usage: nqueens N\n')
     sys.exit(1)
 else:
     try:
@@ -40,7 +40,7 @@ else:
         print('N must be a number\n')
         sys.exit(1)
     if n < 4:
-        print ('N must be at least 4\n')
+        print('N must be at least 4\n')
         sys.exit(1)
     else:
         sol = []
