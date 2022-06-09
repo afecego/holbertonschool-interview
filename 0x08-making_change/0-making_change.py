@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """determine the fewest number of coins needed to meet a given
 amount total"""
+from typing import List
 
 
-def makeChange(coins, total: int) -> int:
+def makeChange(coins: List, total: int) -> int:
     """Return: fewest number of coins needed to meet total"""
     if total <= 0:
         return 0
