@@ -11,10 +11,13 @@ def makeChange(coins, total):
     if coins is None:
         return -1
 
+    new_coins = []
     coins.sort(reverse=True)
+    for i in coins:
+        new_coins.append(i)
 
     new = 0
-    for i in coins:
+    for i in new_coins:
         if total / i <= total:
             new += int(total / i)
             total = total % i
