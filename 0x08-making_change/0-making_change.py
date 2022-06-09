@@ -8,7 +8,7 @@ def makeChange(coins, total):
     if total <= 0:
         return 0
 
-    if coins is None:
+    if coins is None or coins is []:
         return -1
 
     new_coins = []
