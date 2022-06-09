@@ -23,4 +23,5 @@ def makeChange(coins, total):
             total = total % i
     if total == 0:
         return new
-    return -1
+    else:
+        return -1
