@@ -8,25 +8,18 @@ def makeChange(coins, total):
 
     if total <= 0:
         return 0
+    
+    if coins == [] or coins is None:
+        return -1
 
     coins.sort(reverse=True)
 
     count = 0
 
     for i in coins:
-        if total % i == 0:
+        if total % i <= total:
             count += int(total / i)
-            return count
-
-        if total - 1 >= 0:
-            if int(total / i) > 1:
-                count += int(total / i)
-                total = total % i
-            else:
-                count += 1
-                total -= i
-                if total == 0:
-                    break
+            total = total % i
 
     if total == 0:
         return count
