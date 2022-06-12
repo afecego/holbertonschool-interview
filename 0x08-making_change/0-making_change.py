@@ -17,8 +17,9 @@ def makeChange(coins, total):
     count = 0
 
     for i in coins:
-        count += int(total / i)
-        total = total % i
+        n = int(total / i)
+        total = total - (n * i)
+        count += n
         if total == 0:
             return count
     if total != 0:
