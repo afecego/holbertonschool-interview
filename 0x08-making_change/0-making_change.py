@@ -13,11 +13,11 @@ def makeChange(coins, total):
     count = 0
 
     for i in coins:
+        if total == 0:
+            break
         if total % i < total:
             count += int(total / i)
             total = total % i
-        if total == 0:
-            break
 
     if total == 0:
         return count
