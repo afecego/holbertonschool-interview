@@ -3,7 +3,7 @@
 amount total"""
 
 
-def makeChange(coins: list, total: int) -> int:
+def makeChange(coins, total):
     """Return fewest number of coins needed to meet total"""
 
     if total <= 0:
