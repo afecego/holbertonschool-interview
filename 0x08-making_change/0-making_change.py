@@ -3,24 +3,24 @@
 amount total"""
 
 
-def makeChange(coins, total):
+def makeChange(coins: list, total: int) -> int:
     """Return fewest number of coins needed to meet total"""
 
     if total <= 0:
         return 0
 
-    if coins == [] or coins is None:
-        return -1
-
     coins.sort(reverse=True)
 
-    count = 0
+    i, count = (0, 0)
+    tmp = total
+    leng = len(coins)
 
-    for i in coins:
-        n = int(total / i)
-        total = total - (n * i)
-        count += n
-        if total == 0:
-            return count
-    if total != 0:
-        return -1
+    while(i < leng and tmp > 0):
+        if (tmp - coins[i]) >= 0:
+            tmp -= coins[i]
+            count += 1
+        else:
+            i += 1
+
+    check = tmp > 0 and count > 0
+    return -1 if check or count == 0 else count
