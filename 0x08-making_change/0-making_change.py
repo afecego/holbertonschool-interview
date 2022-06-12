@@ -5,6 +5,7 @@ amount total"""
 
 def makeChange(coins, total):
     """Return fewest number of coins needed to meet total"""
+
     if total <= 0:
         return 0
 
@@ -13,11 +14,19 @@ def makeChange(coins, total):
     count = 0
 
     for i in coins:
-        if total == 0:
-            break
-        if total % i < total:
+        if total % i == 0:
             count += int(total / i)
-            total = total % i
+            return count
+
+        if total - 1 >= 0:
+            if int(total / i) > 1:
+                count += int(total / i)
+                total = total % i
+            else:
+                count += 1
+                total -= i
+                if total == 0:
+                    break
 
     if total == 0:
         return count
