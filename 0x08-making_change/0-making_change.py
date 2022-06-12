@@ -12,12 +12,6 @@ def makeChange(coins, total):
     if coins == [] or coins is None:
         return -1
 
-    try:
-        n = coins.index(total)
-        return 1
-    except ValueError:
-        pass
-
     coins.sort(reverse=True)
 
     count = 0
@@ -27,7 +21,4 @@ def makeChange(coins, total):
             count += int(total / i)
             total = total % i
 
-    if total == 0:
-        return count
-    else:
-        return -1
+    return count if total == 0 else -1
