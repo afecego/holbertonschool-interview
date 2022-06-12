@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""determine the fewest number of coins needed to meet a given amount total"""
+"""Determine the fewest number of coins needed to meet a given
+amount total"""
 
 
 def makeChange(coins, total):
@@ -8,12 +9,15 @@ def makeChange(coins, total):
         return 0
 
     coins.sort(reverse=True)
-    new = 0
+
+    count = 0
+
     for i in coins:
         if total % i <= total:
-            new += int(total / i)
+            count += int(total / i)
             total = total % i
+
     if total == 0:
-        return new
+        return count
     else:
-        return-1
+        return -1
