@@ -7,7 +7,7 @@ def makeChange(coins, total):
     """Return fewest number of coins needed to meet total"""
 
     if total <= 0:
-        return 0
+        return (0)
 
     coins.sort(reverse=True)
 
@@ -19,6 +19,6 @@ def makeChange(coins, total):
         total = total - (tmp * i)
         count += tmp
         if total == 0:
-            return count
+            return (count)
     if total != 0:
-        return -1
+        return (-1)
