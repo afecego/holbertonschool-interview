@@ -15,13 +15,11 @@ def island_perimeter(grid):
 
     count = 0
 
-    print(range(len(grid)))
-    print(range(len(grid[0])))
 
     for i in range(len(grid)):
         for j in range(len(grid[i])):
-            print(i)
             if grid[i][j] == 1:
+
                 if grid[i - 1][j] != 1:
                     count += 1
 
