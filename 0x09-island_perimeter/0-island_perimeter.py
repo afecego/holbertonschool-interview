@@ -10,9 +10,6 @@ def island_perimeter(grid):
     Cells are connected horizontally/vertically (not diagonally).
     grid is rectangular, with its width and height not exceeding 100"""
 
-    if len(grid) > 100 or len(grid[0]) > 100:
-        return ("Error")
-
     count = 0
 
     for i in range(len(grid)):
